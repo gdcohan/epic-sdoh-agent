@@ -1,0 +1,5 @@
+.env
+__pycache__/*
+privatekey.pem
+publickey.pem
+generate_key.py
