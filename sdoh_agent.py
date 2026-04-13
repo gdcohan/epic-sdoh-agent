@@ -14,11 +14,11 @@ class SDOHAgent:
         Analyze the provided medical notes to create a SINGLE consolidated SDOH profile for this patient.
         Do not list every date. Instead, summarize their current situation based on the most recent evidence.
 
-        Focus on: Housing, Food, Transport, and Financial risks.
+        Focus on: Housing, Food, Transport, Financial insecurity, though you can use your discretion to identify other relevant challenges.
         Return a JSON object: 
         {
         "summary": "Brief clinical overview",
-        "risks": [{"category": "...", "severity": "...", "evidence": "..."}],
+        "risks": [{"category": "...", "severity": "...", "evidence": "...", "citation": "provide the source of the evidence cited, along with the relevant provider, author, etc."}],
         "overall_risk_score": 1-10
         }
         """

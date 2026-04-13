@@ -1,6 +1,9 @@
+import os
+import json
+import time
 from epic_client import EpicFHIRClient
 from sdoh_agent import SDOHAgent
-import sandbox_utils # Part 2
+import sandbox_utils
 
 # Initializing
 client = EpicFHIRClient()
@@ -32,7 +35,7 @@ def run_pipeline(use_sandbox_workaround=True):
             # Print a clean summary instead of raw JSON
             if analysis:
                 print(f"   ✅ Analysis Complete. Risk Score: {analysis.get('overall_risk_score', 'N/A')}/10")
-                # print(json.dumps(analysis, indent=2)) # Uncomment if you want the full blob
+                print(json.dumps(analysis, indent=2))
             else:
                 print("   ⚠️ No notes available for analysis.")
 
@@ -42,6 +45,6 @@ def run_pipeline(use_sandbox_workaround=True):
             continue # Move to the next patient in the census
 
         print("-" * 40)
-        
+
 if __name__ == "__main__":
     run_pipeline(use_sandbox_workaround=True)
