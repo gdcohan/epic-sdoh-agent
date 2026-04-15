@@ -9,7 +9,6 @@ This project provides a robust framework for scanning a hospital census and leve
 * **FHIR Narrative Ingestion:** Navigates the Epic `DocumentReference` and `Binary` resources to extract raw clinical text (Progress Notes, Consults, and Nursing Notes).
 * **Automated Risk Triage:** Uses OpenAI’s GPT-4o to analyze clinical narratives, providing a structured JSON report with evidence-based reasoning and an overall risk score (1–10).
 * **Referral Deduplication:** Includes logic to check for existing `ServiceRequest` (Social Work) entries to prevent clinician alert fatigue.
-* **Error Resilience:** Implements a circuit-breaker pattern in the census processing loop to ensure that a single restricted or malformed patient record does not crash the pipeline.
 
 ## Project Structure
 * **`epic_client.py`**: The production-ready FHIR client handling OAuth2 handshakes (SMART v2), Patient Search, Encounter Census, and Binary resource fetching.
